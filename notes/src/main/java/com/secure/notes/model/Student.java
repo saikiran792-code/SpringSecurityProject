@@ -1,4 +1,4 @@
-package com.secure.notes;
+package com.secure.notes.model;
 
 public class Student {
     private int id;
