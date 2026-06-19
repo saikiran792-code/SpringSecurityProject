@@ -10,7 +10,8 @@ public class UserController {
    @Autowired
    private UserService service;
 
-    @PostMapping("/Register")
+
+    @PostMapping("/register")
     public Users Register( @RequestBody Users user){
         return service.register(user);
     }
@@ -18,5 +19,10 @@ public class UserController {
     public Users Updatepassword(@PathVariable int id,
             @RequestBody Users user){
         return service.Updatepassword(id,user.getPassword());
+    }
+    @PostMapping("/login")
+    public String login(@RequestBody Users user){
+        System.out.println(user);
+        return service.verify(user);
     }
 }
